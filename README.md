@@ -1,4 +1,4 @@
-# URL Shortener
+# BikeFind3r
 BikeFind3r application is built using Django, which allows you to list your bike and it's part for sale/buy. You can directly call the owner if you are interested to buy one.
 ## Prerequisites
 - Text Editor (VS Code)
@@ -43,8 +43,17 @@ python manage.py runserver
 7. Open your web browser and visit `http://127.0.0.1:8000/` to access the BikeFind3r application.
 
 
+<p align="center"><b>Home Page</b></p>
 
 ![BikeFind3r](images/homepage.png)
+
+<p align="center"><b>Listings</b></p>
+
+![Alt text](images/listing.png)
+
+<p align="center"><b>My Listings</b></p>
+
+![Alt text](images/mylist.png)
 
 
 
