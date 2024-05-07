@@ -1,0 +1,26 @@
+{% extends 'listings/base.html' %} {% load static %} {% block content %}
+<h1 class="text-center pt-5 mt-5">Bike Find3r</h1>
+<p class="text-center">A platform to sell your bikes.</p>
+<div class="container">
+  <div class="p-5 m-4">
+    <img
+      src="{% static 'apacheone.png' %}"
+      height="200"
+      width="300"
+      alt="Apache"
+    />
+    <img
+      src="{% static 'example.png' %}"
+      height="200"
+      width="300"
+      alt="Example"
+    />
+    <img
+      src="{% static 'second.png' %}"
+      height="200"
+      width="300"
+      alt="Second"
+    />
+  </div>
+</div>
+{% endblock %}

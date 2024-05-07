@@ -1,0 +1,36 @@
+{% extends 'listings/base.html' %} {% block content %}
+<div class="container pt-3">
+  <h1>Listings</h1>
+  <div class="form-group">
+    <div class="card p-4">
+      <form method="GET">
+        <p><b>Condition :</b> {{ myFilter.form.condition }}</p>
+        <p><b>City : </b> {{ myFilter.form.city }}</p>
+        <p><b>State : </b> {{ myFilter.form.state }}</p>
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card p-4">
+      {% for listing in listings %}
+      <img src="{{ listing.main_photo.url }}" height="200" width="300" alt="" />
+      <p><b>Title :</b> {{ listing.title }}</p>
+      <p><b>Condition :</b> {{ listing.condition }}</p>
+      <p><b>Sale Type :</b> {{ listing.sale_type }}</p>
+      <p><b>Price :</b> Nrs.{{ listing.price | floatformat:2 }}</p>
+      <p><b>Location :</b> {{ listing.city }}, {{ listing.state }}</p>
+      <p><b>Post Date :</b> {{ listing.list_date }}</p>
+      <ul>
+        <a class="btn btn-success" href="{% url 'detail' listing.pk %}"
+          >View Listing</a
+        >
+      </ul>
+      <hr />
+      {% empty %}
+      <h3>No list found.</h3>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

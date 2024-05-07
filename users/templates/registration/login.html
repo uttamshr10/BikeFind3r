@@ -1,0 +1,10 @@
+{% extends 'listings/base.html' %} {% block content %}
+<h1 class="text-center pt-3">Login</h1>
+<div class="container">
+  <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %} {{ form.as_p }}
+    <input type="submit" class="btn bg-success" value="Login" />
+    <input type="hidden" name="next" value="{% url 'index' %}" />
+  </form>
+</div>
+{% endblock %}

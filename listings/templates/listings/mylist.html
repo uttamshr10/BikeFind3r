@@ -1,0 +1,49 @@
+{% extends 'listings/base.html' %} {% block content %}
+<div class="container pt-3">
+  <h2>My Listings</h2>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <table class="table">
+          <tr>
+            <th>Product</th>
+            <th>Date Listed</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          {% for li in list %}
+
+          <tr>
+            <td>{{ li.title }}</td>
+            <td>{{ li.list_date }}</td>
+            <td>
+              <a class="btn bg-success" href="{% url 'detail' li.pk %}">View</a>
+            </td>
+            <td></td>
+            <td>
+              <a class="btn bg-primary" href="{% url 'edit_list' li.pk  %}"
+                >Edit</a
+              >
+            </td>
+            <td>
+              <a class="btn bg-danger" href="{% url 'delete' li.pk  %}"
+                >Delete</a
+              >
+            </td>
+          </tr>
+
+          {% endfor %}
+        </table>
+        <div class="container">
+          <a class="btn bg-success mb-2" href="{% url 'new_list' %}">
+            New Listing</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
